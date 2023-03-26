@@ -8,6 +8,7 @@ class DiscoverProvider extends ChangeNotifier {
   // TODO Repository, DataSource
 
   bool initialLoading = true;
+
   List<VideoPost> videos = [];
 
   Future loadNextPage() async {
