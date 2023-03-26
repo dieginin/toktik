@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/core/widgets/shared/video_buttons.dart';
+import '/core/widgets/video/full_screen_player.dart';
 import '/domain/entities/video_post.dart';
 
 class VideoScrollableView extends StatelessWidget {
@@ -23,6 +24,13 @@ class VideoScrollableView extends StatelessWidget {
         return Stack(
           children: [
             // Video Player + Gradiante
+            // FullScreenPlayer(video: video),
+            SizedBox.expand(
+              child: FullScreenPlayer(
+                caption: videoPost.caption,
+                videoUrl: videoPost.videoUrl,
+              ),
+            ),
 
             // Botones
             Positioned(
