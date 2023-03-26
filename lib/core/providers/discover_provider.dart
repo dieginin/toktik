@@ -5,10 +5,7 @@ import '/infraestructure/models/local_video_model.dart';
 import '/shared/data/local_video_posts.dart';
 
 class DiscoverProvider extends ChangeNotifier {
-  // TODO Repository, DataSource
-
   bool initialLoading = true;
-
   List<VideoPost> videos = [];
 
   Future loadNextPage() async {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import '/core/widgets/video/video_background.dart';
+
 class FullScreenPlayer extends StatefulWidget {
   const FullScreenPlayer({
     super.key,
@@ -55,10 +57,7 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
             child: Stack(
               children: [
                 VideoPlayer(controller),
-
-                // Gradiente
-
-                // Caption
+                VideoBackground(stops: const [.8, 1]),
                 Positioned(
                   bottom: 50,
                   left: 20,
