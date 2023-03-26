@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '/domain/entities/video_post.dart';
-import '/infraestructure/models/local_video_model.dart';
-import '/shared/data/local_video_posts.dart';
+import '/domain/repositories/video_posts_repository.dart';
 
 class DiscoverProvider extends ChangeNotifier {
-  // TODO Repository, DataSource
+  DiscoverProvider({required this.videosRepository});
+
+  final VideoPostsRepository videosRepository;
 
   bool initialLoading = true;
-
   List<VideoPost> videos = [];
 
   Future loadNextPage() async {
-    final List<VideoPost> newVideos = videoPosts.map((video) => LocalVideoModel.fromJson(video).toVideoPostEntity()).toList();
+    final List<VideoPost> newVideos = await videosRepository.getTrendingVideosByPage(1);
 
     videos.addAll(newVideos);
     initialLoading = false;

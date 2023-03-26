@@ -3,7 +3,7 @@ import '/domain/entities/video_post.dart';
 import '/infraestructure/models/local_video_model.dart';
 import '/shared/data/local_video_posts.dart';
 
-class LocalVideoDatasource implements VideoPostDatasource {
+class LocalVideoDatasourceImpl implements VideoPostsDatasource {
   @override
   Future<List<VideoPost>> getFavoriteVideosByUser(String user) => throw UnimplementedError();
 
